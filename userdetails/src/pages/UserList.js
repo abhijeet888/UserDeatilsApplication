@@ -5,9 +5,17 @@ import {Button} from '../components/Button/Button';
 import {Image} from '../components/Image/Image';
 import { Label } from '../components/Label/Label';
 import { Line } from '../components/Line/Line';
+import { useNavigate} from "react-router-dom";
 
 export const UserList = () => {
   const [userData, setUserData] = useState([]);
+
+  const navigate = useNavigate(); 
+
+  const routeChange = (data) =>{ 
+    const path = `/userdetails`; 
+    navigate(path, {state: {data}});
+  }
 
   useEffect(()=>{
     if(userData !== []){
@@ -17,10 +25,6 @@ export const UserList = () => {
       .catch(error => console.error(error));
     }
   },[]);
- 
-  const handleOnClick = () =>{
-    alert("Abcd")
-  }
 
   return (
     <div>
@@ -52,7 +56,7 @@ export const UserList = () => {
       border="solid white 1px"
       color="white"
       children= {<Label color="red" text={users.username}></Label>}
-      onClick={handleOnClick}
+      onClick={() => routeChange(users)}
       height="100px"
       width="500px"
       radius=""

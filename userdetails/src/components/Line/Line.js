@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Line = ({color, border, height, width}) => {
+export const Line = ({color, border, height, width}) => { 
   return (
     <div style={{
         border,

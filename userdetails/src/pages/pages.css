@@ -1,0 +1,13 @@
+.user-info{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.user{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.sign-out{
+    margin-bottom: 50px;
+}
